@@ -172,6 +172,7 @@ class ldap::server::slave(
   $sync_binddn,
   $sync_bindpw,
   $rootpw,
+  $syncrepl_cacert  = false,
   $rootdn         = "cn=admin,${suffix}",
   $schema_inc     = [],
   $modules_inc    = [],

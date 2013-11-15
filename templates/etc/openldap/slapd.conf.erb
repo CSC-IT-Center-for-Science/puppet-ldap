@@ -75,6 +75,7 @@ syncrepl rid=<%= @sync_rid %>
 	bindmethod=simple
 	binddn="<%= @sync_binddn %>"
 	credentials="<%= @sync_bindpw %>"
+<% if has_variable?('syncrepl_cacert') then %>tls_cacert="<%= @syncrepl_cacert %>"<% end %>
 
 updateref <%= @sync_provider %>
 <% end -%>
