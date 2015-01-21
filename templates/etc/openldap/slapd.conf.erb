@@ -62,6 +62,25 @@ syncprov-checkpoint <%= @syncprov_checkpoint %>
 syncprov-sessionlog <%= @syncprov_sessionlog %>
 <% end -%>
 
+
+<% @modules_inc.each do |mod| -%>
+    <% if @mod == 'memberof.la' -%>
+overlay memberof
+memberof-group-oc groupOfUniqueNames
+memberof-member-ad uniqueMember
+memberof-refint true
+overlay memberof
+memberof-group-oc organizationalRole
+memberof-member-ad roleOccupant
+    <% end -%>
+    <% if @mod == 'dynlist.la'-%>
+overlay dynlist
+dynlist-attrset groupOfURLs memberURL
+    <% end -%>
+<% end -%>
+
+
+
 <% if has_variable?('sync_rid') then -%>
 syncrepl rid=<%= @sync_rid %>
 	provider=<%= @sync_provider %>
