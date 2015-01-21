@@ -64,7 +64,7 @@ syncprov-sessionlog <%= @syncprov_sessionlog %>
 
 
 <% @modules_inc.each do |mod| -%>
-    <% if @mod == 'memberof.la' -%>
+<% if mod == 'memberof.la' -%>
 overlay memberof
 memberof-group-oc groupOfUniqueNames
 memberof-member-ad uniqueMember
@@ -72,11 +72,11 @@ memberof-refint true
 overlay memberof
 memberof-group-oc organizationalRole
 memberof-member-ad roleOccupant
-    <% end -%>
-    <% if @mod == 'dynlist.la'-%>
+<% end -%>
+<% if mod == 'dynlist.la'-%>
 overlay dynlist
 dynlist-attrset groupOfURLs memberURL member:owner
-    <% end -%>
+<% end -%>
 <% end -%>
 
 
